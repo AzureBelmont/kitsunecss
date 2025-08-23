@@ -2,7 +2,7 @@
     --text-color: oklch(0.845 0.000 0.0);
     --color-dark-magenta: oklch(0.364 0.027 326.1);
     --color-dark-green: oklch(0.379 0.027 145.0);
-    --color-dark-blue: oklch(0.396 0.026 285.2);
+    --color-dark-blue: oklch(0.375 0.052 326.0); /* dark pink */
     --color-dark-red: oklch(0.360 0.018 18.0);
     --color-red: oklch(0.482 0.055 19.3);
     --color-light-red: oklch(0.564 0.066 19.3);
@@ -15,8 +15,8 @@
     --color-dark-purple: oklch(0.375 0.052 283.6);
     --color-purple: oklch(0.455 0.066 283.5);
     --color-light-purple: oklch(0.532 0.079 283.4);
-    --color-blue: oklch(0.602 0.080 240.9);
-    --color-light-blue: oklch(0.683 0.063 239.9);
+    --color-blue: oklch(0.602 0.080 326.0);      /* main pink */
+    --color-light-blue: oklch(0.683 0.090 326.0); /* light pink */
     --color-bright-white: oklch(1.000 0.000 0.0);
     --color-light-orange: oklch(0.598 0.050 47.9);
 
