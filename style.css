@@ -1,36 +1,58 @@
 :root {
-    --message-bubble-bg: oklch(70% 0.15 320); /* soft pink background */
-    --message-bubble-fg: oklch(95% 0.10 320); /* light text */
-    --message-bubble-border-radius: 20px;
+    /* Core pink colors */
+    --pink-bg: oklch(70% 0.15 320);
+    --pink-fg: oklch(95% 0.10 320);
+    --pink-accent: oklch(60% 0.25 320);
+    --pink-muted: oklch(60% 0.10 320);
+    --pink-hover: oklch(75% 0.18 320);
+}
+
+/* CHAT FRAME */
+#frame {
+    background: oklch(20% 0.10 320);
+}
+
+#frame .content .messages ul li {
+    border-bottom: 1px dashed oklch(30% 0.05 320);
+}
+
+/* Chat typing indicator */
+.chatbox .typing {
+    color: var(--pink-fg);
 }
 
 /* Message avatar border */
 #frame .content .messages ul li > img {
-    border: 3px solid oklch(60% 0.25 320); /* darker pink accent */
+    border: 3px solid var(--pink-accent);
 }
 
-/* Message header */
-.sent > h4 {
-    display: block !important;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    background-color: var(--message-bubble-bg) !important;
-    color: var(--message-bubble-fg);
-    padding: 4px 12px 0 8px;
-    margin: 4px 12px 0 48px;
+/* Message input area */
+#frame .content .message-input .wrap input {
+    color: var(--pink-fg);
+    background: oklch(25% 0.10 320);
+}
+#frame .content .message-input .wrap input:focus {
+    outline: 2px solid var(--pink-accent);
 }
 
-/* Message text */
-.sent > div {
-    display: block !important;
-    border-bottom-right-radius: 15px;
-    background-color: var(--message-bubble-bg) !important;
-    color: var(--message-bubble-fg);
-    padding: 0 12px 4px 8px !important;
-    margin: 0 12px 4px 48px !important;
+#frame .content .message-input .wrap .attachment {
+    color: var(--pink-accent);
 }
 
-/* Bot messages */
+#frame .content .message-input .wrap button {
+    background: var(--pink-bg);
+    color: var(--pink-fg);
+}
+#frame .content .message-input .wrap button:hover {
+    background: var(--pink-hover);
+}
+
+/* Message Bubbles */
+.sent > h4, .sent > div {
+    background-color: var(--pink-bg) !important;
+    color: var(--pink-fg);
+}
+
 .sent > .system {
     border-bottom-left-radius: 15px;
 }
@@ -42,11 +64,11 @@
     bottom: 4px;
     left: 38px;
     width: 0;
-    border-right: 10px solid var(--message-bubble-bg) !important;
+    border-right: 10px solid var(--pink-bg) !important;
     border-top: 10px solid transparent;
 }
 
-/* Entire Message */
+/* Entire Message container */
 #frame .content .messages ul li.sent {
     border: 0;
     display: table;
@@ -54,8 +76,41 @@
     width: auto;
 }
 
-/* Timestamp */
+/* Timestamp / muted text */
 #frame .content .messages ul li.sent h4 .text-muted {
     float: none;
-    color: oklch(60% 0.15 320); /* muted pink for timestamp */
+    color: var(--pink-muted);
+}
+
+/* Hover states for links */
+a {
+    color: var(--pink-accent);
+}
+a:hover {
+    color: var(--pink-fg);
+}
+
+/* Input / textarea borders */
+#frame .content .message-input .wrap input,
+textarea {
+    border: 1px solid var(--pink-accent);
+    border-radius: 5px;
+}
+#frame .content .message-input .wrap input:focus,
+textarea:focus {
+    border: 2px solid var(--pink-fg);
+}
+
+/* Chatbox buttons */
+.chatbox button {
+    background: var(--pink-bg);
+    color: var(--pink-fg);
+}
+.chatbox button:hover {
+    background: var(--pink-hover);
+}
+
+/* Muted / system text */
+.text-muted {
+    color: var(--pink-muted);
 }
