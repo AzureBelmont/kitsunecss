@@ -2,33 +2,68 @@
    Root Variables
 =========================== */
 :root {
-  --bg-color: oklch(96% 0 0); /* main background */
-  --surface-color: oklch(100% 0 0 / 0.3);
+  /* Neutrals */
+  --bg-color: oklch(96% 0 0);
+  --surface-color: oklch(100% 0 0 / 0.3); /* glassmorphic frosted background */
   --border-color: oklch(85% 0 0 / 0.3);
   --text-color: oklch(20% 0 0);
   --text-muted: oklch(50% 0 0);
 
+  /* Accent */
   --pink-accent: oklch(75% 0.2 320);
   --pink-accent-light: oklch(85% 0.15 320);
 
+  /* Rank Colors */
   --admin-color: #ff5555;
   --mod-color: #55ff55;
   --user-color: #5555ff;
 
+  /* Buttons */
   --button-bg: oklch(92% 0 0 / 0.3);
   --button-hover: var(--pink-accent);
   --button-gradient: linear-gradient(135deg, oklch(92% 0 0 / 0.3), var(--pink-accent-light));
 
+  /* Shadows */
   --shadow-light: 0 4px 12px oklch(0% 0 0 / 0.08);
   --shadow-hover: 0 8px 24px oklch(0% 0 0 / 0.12);
+
+  /* Frosted Blur */
   --frosted-blur: blur(12px);
 }
 
 /* ==========================
-   Background Fix
+   Force Background & Text Colors
 =========================== */
 body, html, #root, .wrapper, .main, .content {
   background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+* {
+  color: inherit !important;
+  box-sizing: border-box;
+}
+
+/* ==========================
+   Body & Typography
+=========================== */
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+/* ==========================
+   Links
+=========================== */
+a {
+  color: var(--pink-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--pink-accent-light);
 }
 
 /* ==========================
@@ -76,6 +111,17 @@ button:hover, .btn:hover {
 }
 
 /* ==========================
+   Text & Muted
+=========================== */
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-pink {
+  color: var(--pink-accent);
+}
+
+/* ==========================
    Rank Badges
 =========================== */
 .badge {
@@ -88,9 +134,17 @@ button:hover, .btn:hover {
   backdrop-filter: var(--frosted-blur);
 }
 
-.badge.admin { background-color: var(--admin-color); }
-.badge.mod   { background-color: var(--mod-color); }
-.badge.user  { background-color: var(--user-color); }
+.badge.admin {
+  background-color: var(--admin-color);
+}
+
+.badge.mod {
+  background-color: var(--mod-color);
+}
+
+.badge.user {
+  background-color: var(--user-color);
+}
 
 /* ==========================
    Inputs
@@ -138,23 +192,23 @@ th {
 /* ==========================
    Misc Utilities
 =========================== */
-.text-muted { color: var(--text-muted); }
-.text-pink { color: var(--pink-accent); }
-.bg-pink { background-color: var(--pink-accent); color: var(--bg-color); }
-.rounded { border-radius: 1rem; }
-.shadow { box-shadow: var(--shadow-light); }
+.bg-pink {
+  background-color: var(--pink-accent);
+  color: var(--bg-color);
+}
+
+.rounded {
+  border-radius: 1rem;
+}
+
+.shadow {
+  box-shadow: var(--shadow-light);
+}
 
 /* ==========================
    Hover Effects
 =========================== */
 .card:hover, .surface:hover {
   border-color: var(--pink-accent);
-  box-shadow: var(--shadow-hover);
-}
-
-button:hover, .btn:hover {
-  background-color: var(--button-hover);
-  color: var(--bg-color);
-  transform: translateY(-1px);
   box-shadow: var(--shadow-hover);
 }
