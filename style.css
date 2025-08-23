@@ -1,169 +1,70 @@
 /* ==========================
-   Root Variables
+   Pink Accents & Buttons
 =========================== */
 :root {
-    /* Neutrals */
-    --bg-color: #181818; /* keeps your dark background */
-    --surface-color: rgba(28,28,28,0.8);
-    --border-color: rgba(85,85,85,0.5);
-    --text-color: #ccc;
-    --text-muted: #999;
-
-    /* Accent */
     --pink-accent: oklch(75% 0.2 320);
     --pink-accent-light: oklch(85% 0.15 320);
-
-    /* Rank Colors */
-    --admin-color: #ff5555;
-    --mod-color: #55ff55;
-    --user-color: #5555ff;
-
-    /* Buttons */
-    --button-bg: rgba(28,28,28,0.8);
-    --button-hover: var(--pink-accent);
-    --button-gradient: linear-gradient(135deg, rgba(28,28,28,0.8), var(--pink-accent-light));
-
-    /* Shadows */
-    --shadow-light: 0 4px 12px rgba(0,0,0,0.2);
-    --shadow-hover: 0 8px 24px rgba(0,0,0,0.3);
-
-    /* Frosted Blur */
-    --frosted-blur: blur(10px);
 }
 
-/* ==========================
-   Body & Typography
-=========================== */
-body, html {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: "DejaVu Sans", Arial, sans-serif;
-    line-height: 1.6;
-}
-
-/* ==========================
-   Links
-=========================== */
-a {
-    color: var(--pink-accent);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-a:hover {
-    color: var(--pink-accent-light);
-}
-
-/* ==========================
-   Buttons
-=========================== */
-button, .btn,
-input[type="file"] {
-    background: var(--button-gradient);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+/* Buttons (filled / primary) */
+button,
+input[type="file"],
+.button,
+.btn {
+    background: var(--pink-accent);
+    color: var(--body-fg);
+    border: none;
+    border-radius: 9999px;
     padding: 0.5em 1em;
-    border-radius: 0.75rem;
+    font-weight: 600;
     cursor: pointer;
-    font-weight: 600;
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: var(--shadow-light);
-    appearance: none;
 }
 
-button:hover, .btn:hover,
-input[type="file"]:hover {
-    background-color: var(--button-hover);
-    color: var(--bg-color);
+button:hover,
+input[type="file"]:hover,
+.button:hover,
+.btn:hover {
+    background: var(--pink-accent-light);
     transform: translateY(-1px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* ==========================
-   Cards / Surfaces
-=========================== */
-.card, .surface {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 1rem;
-    padding: 1.2rem;
-    margin-bottom: 1rem;
-    box-shadow: var(--shadow-light);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-}
-
-.card:hover, .surface:hover {
-    border-color: var(--pink-accent);
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-2px);
-}
-
-/* ==========================
-   Text & Muted
-=========================== */
-.text-muted {
-    color: var(--text-muted);
-}
-.text-pink {
+/* Buttons (outlined / secondary) */
+.button--outlined,
+.btn--outlined {
+    background: inherit;
+    border: 1px solid var(--pink-accent);
     color: var(--pink-accent);
+    border-radius: 9999px;
 }
 
-/* ==========================
-   Rank Badges
-=========================== */
-.badge {
-    padding: 0.25em 0.6em;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    color: #fff;
-    font-size: 0.85rem;
-    text-transform: uppercase;
+.button--outlined:hover,
+.btn--outlined:hover {
+    background: var(--pink-accent);
+    color: var(--body-fg);
 }
 
-.badge.admin { background-color: var(--admin-color); }
-.badge.mod { background-color: var(--mod-color); }
-.badge.user { background-color: var(--user-color); }
-
-/* ==========================
-   Inputs & Forms
-=========================== */
-input, textarea, select {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    padding: 0.5em;
-    border-radius: 0.5rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-
-input:focus, textarea:focus, select:focus {
+/* Input focus */
+input:focus,
+textarea:focus,
+select:focus {
     outline: none;
     border-color: var(--pink-accent);
     box-shadow: 0 0 0 3px rgba(255,85,170,0.25);
 }
 
-/* ==========================
-   Tables
-=========================== */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 1rem;
-    background: var(--surface-color);
-    border-radius: 0.75rem;
-    overflow: hidden;
-}
-th, td {
-    border: 1px solid var(--border-color);
-    padding: 0.5em 1em;
-}
-th {
-    background: rgba(28,28,28,0.6);
-    text-align: left;
+/* Small pink accent tweaks */
+.text-pink {
+    color: var(--pink-accent);
 }
 
-/* ==========================
-   Misc Utilities
-=========================== */
-.bg-pink { background-color: var(--pink-accent); color: var(--bg-color); }
-.rounded { border-radius: 1rem; }
-.shadow { box-shadow: var(--shadow-light); }
+.badge--pink {
+    background-color: var(--pink-accent);
+    color: var(--body-fg);
+}
+
+.meta-chip-icon-hover,
+.meta-chip-hover-bg {
+    background-color: var(--pink-accent-light) !important;
+}
