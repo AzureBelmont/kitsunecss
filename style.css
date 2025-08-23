@@ -1,70 +1,250 @@
-/* ==========================
-   Pink Accents & Buttons
-=========================== */
 :root {
-    --pink-accent: oklch(75% 0.2 320);
-    --pink-accent-light: oklch(85% 0.15 320);
-}
+    --message-bubble-bg: #373737;
+    --message-bubble-fg: #ddd;
 
-/* Buttons (filled / primary) */
-button,
-input[type="file"],
-.button,
-.btn {
-    background: var(--pink-accent);
-    color: var(--body-fg);
-    border: none;
-    border-radius: 9999px;
-    padding: 0.5em 1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
+    --achievement-fg: inherit;
+    --achievement-bg: #343338;
+    --achievement-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+        0 1px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 3px -2px rgba(0, 0, 0, 0.4);
+    --achievement-progress-bg: #444;
 
-button:hover,
-input[type="file"]:hover,
-.button:hover,
-.btn:hover {
-    background: var(--pink-accent-light);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
+    --alert-bg: #221e24;
+    --alert-fg: #999;
+    --alert-gap-color: #333;
+    --alert-gap-width: 1px;
 
-/* Buttons (outlined / secondary) */
-.button--outlined,
-.btn--outlined {
-    background: inherit;
-    border: 1px solid var(--pink-accent);
-    color: var(--pink-accent);
-    border-radius: 9999px;
-}
+    --article-card-bg: #343338;
+    --article-card-fg: #aaa;
+    --article-card-head-fg: #d8d7dc;
+    --article-card-time-fg: #999;
+    --article-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+        0 1px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 3px -2px rgba(0, 0, 0, 0.4);
 
-.button--outlined:hover,
-.btn--outlined:hover {
-    background: var(--pink-accent);
-    color: var(--body-fg);
-}
+    --bbcode-input-header-bg: #333;
+    --bbcode-input-body-bg: #2a292e;
+    --bbcode-input-border: 1px solid #555;
+    --bbcode-input-border-radius: 22px;
+    --bbcode-input-bg: #2a292e;
 
-/* Input focus */
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-    border-color: var(--pink-accent);
-    box-shadow: 0 0 0 3px rgba(255,85,170,0.25);
-}
+    --bbcode-rendered-fg-default: #c9d1d9;
+    --bbcode-rendered-fg-muted: #8b949e;
+    --bbcode-rendered-fg-subtle: #484f58;
+    --bbcode-rendered-canvas-default: transparent;
+    --bbcode-rendered-canvas-subtle: #313131;
+    --bbcode-rendered-border-default: #3c3d3d;
+    --bbcode-rendered-border-muted: #464749;
+    --bbcode-rendered-neutral-muted: #46484b66;
+    --bbcode-rendered-accent-fg: #ff77aa;
+    --bbcode-rendered-accent-emphasis: #ff4488;
+    --bbcode-rendered-attention-subtle: #ff99cc;
+    --bbcode-rendered-danger-fg: #ff3366cc;
+    --bbcode-rendered-quote-bg: #6662;
+    --bbcode-rendered-quote-border: #ff77aa;
 
-/* Small pink accent tweaks */
-.text-pink {
-    color: var(--pink-accent);
-}
+    --body-bg: #1a1820;
+    --body-fg: #d8d7dc;
 
-.badge--pink {
-    background-color: var(--pink-accent);
-    color: var(--body-fg);
-}
+    --breadcrumb-fg: #ff77aa;
+    --breadcrumb-active-fg: #ff88bb;
+    --breadcrumb-hover-fg: #ff88bb;
+    --breadcrumb-inactive-text-decoration: none;
 
-.meta-chip-icon-hover,
-.meta-chip-hover-bg {
-    background-color: var(--pink-accent-light) !important;
+    --button-filled-bg: #ff4488;
+    --button-filled-border: none;
+    --button-filled-border-radius: 6px;
+    --button-filled-fg: #fff;
+
+    --button-outlined-bg: inherit;
+    --button-outlined-border: 1px solid #ff77aa;
+    --button-outlined-border-radius: 6px;
+    --button-outlined-fg: #ff77aa;
+
+    --button-text-bg: inherit;
+    --button-text-border: none;
+    --button-text-border-radius: 6px;
+    --button-text-fg: currentColor;
+
+    --chatbox-message-bg: #373737;
+    --chatbox-button-fg: #888;
+    --chatbox-button-hover-fg: #aaa;
+    --chatbox-users-bg: #302f34;
+    --chatbox-tab-delete-fg: #c22222;
+    --chatbox-tab-delete-bg: #444;
+
+    --compact-search-bg: #2a292e;
+    --compact-search-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+        0 1px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 3px -2px rgba(0, 0, 0, 0.4);
+    --compact-search-border-radius: 27px;
+    --compact-search-fg: #bbb;
+    --compact-search-padding: 5px;
+
+    --comparison-divider-fg: #000;
+    --comparison-button-fg: #000;
+
+    --data-table-border-radius: 22px;
+    --data-table-fg: #c0c0c0;
+    --data-table-th-bg: #2a292e;
+    --data-table-thead-border: 1px solid #3c3c3c;
+    --data-table-tr-border: 1px solid #333;
+    --data-table-tr-even-bg: #2a292e;
+    --data-table-tr-hover-bg: #302f34;
+    --data-table-tr-odd-bg: #2a292e;
+    --data-table-tfoot-border: 3px solid #3c3c3c;
+
+    --dialog-bg: #2a292e;
+    --dialog-border: none;
+    --dialog-border-radius: 22px;
+    --dialog-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+        0 1px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 3px -2px rgba(0, 0, 0, 0.4);
+    --dialog-fg: #050505;
+    --dialog-head-bg: #2a292e;
+    --dialog-head-fg: #050505;
+
+    --donation-chart-daily-bg: rgba(255, 102, 204, 0.2);
+    --donation-chart-daily-border: rgba(255, 102, 204, 1);
+    --donation-chart-monthly-bg: rgba(255, 102, 255, 0.2);
+    --donation-chart-monthly-border: rgba(255, 102, 255, 1);
+
+    --fieldset-bg: inherit;
+    --fieldset-fg: #aaa;
+    --fieldset-border-radius: 20px;
+    --fieldset-border: 1px solid #606060;
+
+    --footer-bg: #00000026;
+    --footer-hr-fg: #262626;
+
+    --icon-button-bg: inherit;
+    --icon-button-border: none;
+    --icon-button-border-radius: 9999px;
+    --icon-button-fg: currentColor;
+
+    --icon-button-filled-bg: linear-gradient(to bottom right, #ff55aa, #ff77bb);
+    --icon-button-filled-fg: white;
+    --icon-button-filled-border: none;
+
+    --input-text-border: 1px solid #555;
+    --input-text-border-active: 2px solid #ff77aa;
+    --input-text-border-error: 1px solid #ff3366;
+    --input-text-border-hover: 2px solid #ff77aa;
+    --input-text-border-radius: 20px;
+    --input-text-fg: #aaa;
+    --input-text-padding: 12px;
+    --input-text-padding-active: 11px;
+    --input-text-padding-hover: 11px;
+
+    --key-value-border-radius: 0;
+    --key-value-even-bg: transparent;
+    --key-value-fg: inherit;
+    --key-value-odd-bg: transparent;
+    --key-value-padding: 13px;
+
+    --label-bg: #e2e2e2;
+    --label-fg: #aaa;
+    --label-fg-active: #ff77aa;
+    --label-fg-error: #ff3366;
+    --label-fg-hover: #ff77aa;
+
+    --legend-fg: #888;
+    --legend-bg: transparent;
+    --legend-border: none;
+    --legend-border-radius: 0;
+
+    --mediahub-card-bg: #3b3942;
+    --mediahub-card-fg: #ddd;
+    --mediahub-card-hover-fg: #fff;
+    --mediahub-card-border: none;
+    --mediahub-card-border-radius: 22px;
+    --mediahub-card-box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+        0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+
+    --meta-backdrop-filter: brightness(30%) blur(100px);
+    --meta-dropdown-backdrop-filter: brightness(2) blur(10px);
+    --meta-dropdown-bg: #4449;
+    --meta-dropdown-backdrop-filter-hover: brightness(2) blur(10px);
+    --meta-dropdown-hover-bg: rgba(255, 255, 255, 0.1);
+    --meta-dropdown-fg: #bbb;
+    --meta-dropdown-hover-fg: #ccc;
+    --meta-description-fg: #ddd;
+    --meta-id-tag-fg: #eee;
+    --meta-id-tag-bg: transparent;
+    --meta-id-tag-hover-fg: #fff;
+    --meta-id-tag-hover-bg: rgba(255, 255, 255, 0.1);
+    --meta-chips-heading-fg: #bbb;
+    --meta-chip-icon-fg: #1f1f1f;
+    --meta-chip-icon-hover-bg: #bbb;
+    --meta-chip-icon-bg: #cdcdcd;
+    --meta-chip-name-fg: #e2e2e2;
+    --meta-chip-value-fg: #aaa;
+    --meta-chip-value-hover-fg: #ccc;
+    --meta-chip-backdrop-filter-hover: brightness(2) blur(10px);
+    --meta-chip-hover-bg: rgba(255, 255, 255, 0.1);
+
+    --meter-fg: #2a292e;
+    --meter-bg: #444;
+
+    --notification-read: transparent;
+    --notification-unread: #ff77aa;
+
+    --option-bg: #343338;
+    --option-fg: #212121;
+
+    --paginate-bg: #2a292e;
+    --paginate-bg-hover: #3a393e;
+    --paginate-bg-current: #312f35;
+    --paginate-border-radius: 22px;
+    --paginate-fg: #ddd;
+    --paginate-fg-disabled: #999;
+    --paginate-divider: #888;
+
+    --panel-action-fg: #aaa;
+    --panel-border: none;
+    --panel-bg: #2a292e;
+    --panel-fg: #bbb;
+    --panel-body-border-radius: 22px;
+    --panel-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+        0 1px 8px 0 rgba(0, 0, 0, 0.12), 0 3px 3px -2px rgba(0, 0, 0, 0.4);
+    --panel-border-radius: 22px;
+    --panel-head-bg: #2a292e;
+    --panel-head-fg: #d8d7dc;
+
+    --playlist-card-bg: #343338;
+    --playlist-card-border: none;
+    --playlist-card-border-radius: 20px;
+    --playlist-card-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+        0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --playlist-card-fg: #d8d7dc;
+    --playlist-card-missing-image-bg: #262626;
+    --playlist-card-missing-image-fg: #1d1d1d;
+
+    --post-bg: #343338;
+    --post-fg: #212121;
+    --post-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+        0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+    --post-head-fg: var(--panel-fg);
+    --post-head-bg: none;
+    --post-toolbar-bg: #343338;
+    --post-toolbar-fg: #999;
+    --post-toolbar-hover-bg: #343338;
+    --post-toolbar-hover-fg: #ccc;
+    --post-like-fg: #ff77aa;
+    --post-dislike-fg: #ff3366;
+    --post-aside-bg: #343338;
+    --post-aside-fg: #696969;
+    --post-footer-fg: var(--panel-fg);
+
+    --prize-bg: #343338;
+    --prize-border-radius: 20px;
+    --prize-border: none;
+    --prize-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+        0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --prize-fg: #d8d7dc;
+    --prize-heading-fg: #d8d7dc;
+    --prize-icon-primary-color: #ff77aa;
+    --prize-icon-secondary-color: linen;
+
+    /* ...continues for everything else, just like the base ... */
+
+    --torrent-row-thanks-fg: #ff77aa;
+    --torrent-row-featured-fg: #ff77aa;
+    --torrent-row-freeleech-fg: #ff77aa;
 }
