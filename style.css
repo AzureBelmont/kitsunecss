@@ -15,7 +15,7 @@
     --color-dark-purple: oklch(0.375 0.052 283.6);
     --color-purple: oklch(0.455 0.066 283.5);
     --color-light-purple: oklch(0.532 0.079 283.4);
-    --color-blue: oklch(0.602 0.080 326.0);      /* main pink */
+    --color-blue: oklch(0.602 0.080 240.9);
     --color-light-blue: oklch(0.683 0.090 326.0); /* light pink */
     --color-bright-white: oklch(1.000 0.000 0.0);
     --color-light-orange: oklch(0.598 0.050 47.9);
