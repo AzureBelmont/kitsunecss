@@ -1,46 +1,56 @@
 /* ==========================
-   Force Overrides for External Use
+   Root Variables
 =========================== */
-
-/* Add !important to ensure it overrides existing theme styles */
 :root {
   /* Neutrals */
-  --bg-color: oklch(96% 0 0) !important;
-  --surface-color: oklch(100% 0 0 / 0.3) !important;
-  --border-color: oklch(85% 0 0 / 0.3) !important;
-  --text-color: oklch(20% 0 0) !important;
-  --text-muted: oklch(50% 0 0) !important;
+  --bg-color: oklch(96% 0 0);
+  --surface-color: oklch(100% 0 0 / 0.3); /* glassmorphic frosted background */
+  --border-color: oklch(85% 0 0 / 0.3);
+  --text-color: oklch(20% 0 0);
+  --text-muted: oklch(50% 0 0);
 
   /* Accent */
-  --pink-accent: oklch(75% 0.2 320) !important;
-  --pink-accent-light: oklch(85% 0.15 320) !important;
+  --pink-accent: oklch(75% 0.2 320);
+  --pink-accent-light: oklch(85% 0.15 320);
 
   /* Rank Colors */
-  --admin-color: #ff5555 !important;
-  --mod-color: #55ff55 !important;
-  --user-color: #5555ff !important;
+  --admin-color: #ff5555;
+  --mod-color: #55ff55;
+  --user-color: #5555ff;
 
   /* Buttons */
-  --button-bg: oklch(92% 0 0 / 0.3) !important;
-  --button-hover: var(--pink-accent) !important;
-  --button-gradient: linear-gradient(135deg, oklch(92% 0 0 / 0.3), var(--pink-accent-light)) !important;
+  --button-bg: oklch(92% 0 0 / 0.3);
+  --button-hover: var(--pink-accent);
+  --button-gradient: linear-gradient(135deg, oklch(92% 0 0 / 0.3), var(--pink-accent-light));
 
   /* Shadows */
-  --shadow-light: 0 4px 12px oklch(0% 0 0 / 0.08) !important;
-  --shadow-hover: 0 8px 24px oklch(0% 0 0 / 0.12) !important;
+  --shadow-light: 0 4px 12px oklch(0% 0 0 / 0.08);
+  --shadow-hover: 0 8px 24px oklch(0% 0 0 / 0.12);
 
   /* Frosted Blur */
-  --frosted-blur: blur(12px) !important;
+  --frosted-blur: blur(12px);
+}
+
+/* ==========================
+   Background Fix (Theme Override)
+=========================== */
+body, html, #root, .wrapper, .main, .content {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+body * {
+  background-color: inherit !important;
+  color: inherit !important;
 }
 
 /* ==========================
    Body & Typography
 =========================== */
 body {
-  background-color: var(--bg-color) !important;
-  color: var(--text-color) !important;
-  font-family: "Inter", sans-serif !important;
-  line-height: 1.6 !important;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
 }
 
 /* ==========================
@@ -49,6 +59,7 @@ body {
 a {
   color: var(--pink-accent) !important;
   text-decoration: none !important;
+  transition: color 0.2s ease !important;
 }
 
 a:hover {
@@ -63,19 +74,19 @@ button, .btn {
   backdrop-filter: var(--frosted-blur) !important;
   color: var(--text-color) !important;
   border: 1px solid var(--border-color) !important;
-  padding: 0.5em 1em !important;
-  border-radius: 0.75rem !important;
-  cursor: pointer !important;
-  font-weight: 600 !important;
-  box-shadow: var(--shadow-light) !important;
-  transition: all 0.3s ease !important;
+  padding: 0.5em 1em;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-light);
 }
 
 button:hover, .btn:hover {
   background-color: var(--button-hover) !important;
   color: var(--bg-color) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: var(--shadow-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
 }
 
 /* ==========================
@@ -85,16 +96,17 @@ button:hover, .btn:hover {
   background: var(--surface-color) !important;
   backdrop-filter: var(--frosted-blur) !important;
   border: 1px solid var(--border-color) !important;
-  border-radius: 1rem !important;
-  padding: 1.2rem !important;
-  margin-bottom: 1rem !important;
-  box-shadow: var(--shadow-light) !important;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-light);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s ease, background 0.3s ease;
 }
 
 .card:hover, .surface:hover {
   border-color: var(--pink-accent) !important;
-  box-shadow: var(--shadow-hover) !important;
-  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
   background: oklch(100% 0 0 / 0.35) !important;
 }
 
@@ -113,18 +125,26 @@ button:hover, .btn:hover {
    Rank Badges
 =========================== */
 .badge {
-  padding: 0.25em 0.6em !important;
-  border-radius: 0.5rem !important;
-  font-weight: 600 !important;
+  padding: 0.25em 0.6em;
+  border-radius: 0.5rem;
+  font-weight: 600;
   color: #fff !important;
-  font-size: 0.85rem !important;
-  text-transform: uppercase !important;
+  font-size: 0.85rem;
+  text-transform: uppercase;
   backdrop-filter: var(--frosted-blur) !important;
 }
 
-.badge.admin { background-color: var(--admin-color) !important; }
-.badge.mod { background-color: var(--mod-color) !important; }
-.badge.user { background-color: var(--user-color) !important; }
+.badge.admin {
+  background-color: var(--admin-color) !important;
+}
+
+.badge.mod {
+  background-color: var(--mod-color) !important;
+}
+
+.badge.user {
+  background-color: var(--user-color) !important;
+}
 
 /* ==========================
    Inputs
@@ -134,12 +154,13 @@ input, textarea, select {
   backdrop-filter: var(--frosted-blur) !important;
   border: 1px solid var(--border-color) !important;
   color: var(--text-color) !important;
-  padding: 0.5em !important;
-  border-radius: 0.5rem !important;
+  padding: 0.5em;
+  border-radius: 0.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 input:focus, textarea:focus, select:focus {
-  outline: none !important;
+  outline: none;
   border-color: var(--pink-accent) !important;
   box-shadow: 0 0 0 3px oklch(75% 0.15 320 / 0.25) !important;
 }
@@ -148,28 +169,46 @@ input:focus, textarea:focus, select:focus {
    Tables
 =========================== */
 table {
-  width: 100% !important;
-  border-collapse: collapse !important;
-  margin-bottom: 1rem !important;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
   background: var(--surface-color) !important;
   backdrop-filter: var(--frosted-blur) !important;
-  border-radius: 0.75rem !important;
-  overflow: hidden !important;
+  border-radius: 0.75rem;
+  overflow: hidden;
 }
 
 th, td {
   border: 1px solid var(--border-color) !important;
-  padding: 0.5em 1em !important;
+  padding: 0.5em 1em;
+  transition: background 0.2s ease;
 }
 
 th {
   background: oklch(100% 0 0 / 0.25) !important;
-  text-align: left !important;
+  text-align: left;
 }
 
 /* ==========================
-   Utility Classes
+   Misc Utilities
 =========================== */
-.bg-pink { background-color: var(--pink-accent) !important; color: var(--bg-color) !important; }
-.rounded { border-radius: 1rem !important; }
-.shadow { box-shadow: var(--shadow-light) !important; }
+.bg-pink {
+  background-color: var(--pink-accent) !important;
+  color: var(--bg-color) !important;
+}
+
+.rounded {
+  border-radius: 1rem !important;
+}
+
+.shadow {
+  box-shadow: var(--shadow-light) !important;
+}
+
+/* ==========================
+   Hover Effects
+=========================== */
+.card:hover, .surface:hover {
+  border-color: var(--pink-accent) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
