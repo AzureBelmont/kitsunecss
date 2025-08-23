@@ -2,71 +2,43 @@
    Root Variables
 =========================== */
 :root {
-  /* Neutrals */
-  --bg-color: oklch(96% 0 0);
-  --surface-color: oklch(100% 0 0 / 0.3); /* glassmorphic frosted background */
+  --bg-color: oklch(96% 0 0); /* main background */
+  --surface-color: oklch(100% 0 0 / 0.3);
   --border-color: oklch(85% 0 0 / 0.3);
   --text-color: oklch(20% 0 0);
   --text-muted: oklch(50% 0 0);
 
-  /* Accent */
   --pink-accent: oklch(75% 0.2 320);
   --pink-accent-light: oklch(85% 0.15 320);
 
-  /* Rank Colors */
   --admin-color: #ff5555;
   --mod-color: #55ff55;
   --user-color: #5555ff;
 
-  /* Buttons */
   --button-bg: oklch(92% 0 0 / 0.3);
   --button-hover: var(--pink-accent);
   --button-gradient: linear-gradient(135deg, oklch(92% 0 0 / 0.3), var(--pink-accent-light));
 
-  /* Shadows */
   --shadow-light: 0 4px 12px oklch(0% 0 0 / 0.08);
   --shadow-hover: 0 8px 24px oklch(0% 0 0 / 0.12);
-
-  /* Frosted Blur */
   --frosted-blur: blur(12px);
 }
 
 /* ==========================
-   Background Fix (safe)
+   Background Fix
 =========================== */
 body, html, #root, .wrapper, .main, .content {
   background-color: var(--bg-color) !important;
 }
 
 /* ==========================
-   Body & Typography
-=========================== */
-body {
-  font-family: "Inter", sans-serif;
-  line-height: 1.6;
-}
-
-/* ==========================
-   Links
-=========================== */
-a {
-  color: var(--pink-accent) !important;
-  text-decoration: none !important;
-  transition: color 0.2s ease !important;
-}
-
-a:hover {
-  color: var(--pink-accent-light) !important;
-}
-
-/* ==========================
    Buttons
 =========================== */
 button, .btn {
-  background: var(--button-gradient) !important;
-  backdrop-filter: var(--frosted-blur) !important;
-  color: var(--text-color) !important;
-  border: 1px solid var(--border-color) !important;
+  background: var(--button-gradient);
+  backdrop-filter: var(--frosted-blur);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
   padding: 0.5em 1em;
   border-radius: 0.75rem;
   cursor: pointer;
@@ -76,8 +48,8 @@ button, .btn {
 }
 
 button:hover, .btn:hover {
-  background-color: var(--button-hover) !important;
-  color: var(--bg-color) !important;
+  background-color: var(--button-hover);
+  color: var(--bg-color);
   transform: translateY(-1px);
   box-shadow: var(--shadow-hover);
 }
@@ -86,9 +58,9 @@ button:hover, .btn:hover {
    Cards / Surfaces
 =========================== */
 .card, .surface {
-  background: var(--surface-color) !important;
-  backdrop-filter: var(--frosted-blur) !important;
-  border: 1px solid var(--border-color) !important;
+  background: var(--surface-color);
+  backdrop-filter: var(--frosted-blur);
+  border: 1px solid var(--border-color);
   border-radius: 1rem;
   padding: 1.2rem;
   margin-bottom: 1rem;
@@ -97,21 +69,10 @@ button:hover, .btn:hover {
 }
 
 .card:hover, .surface:hover {
-  border-color: var(--pink-accent) !important;
+  border-color: var(--pink-accent);
   box-shadow: var(--shadow-hover);
   transform: translateY(-2px);
-  background: oklch(100% 0 0 / 0.35) !important;
-}
-
-/* ==========================
-   Text & Muted
-=========================== */
-.text-muted {
-  color: var(--text-muted) !important;
-}
-
-.text-pink {
-  color: var(--pink-accent) !important;
+  background: oklch(100% 0 0 / 0.35);
 }
 
 /* ==========================
@@ -121,32 +82,24 @@ button:hover, .btn:hover {
   padding: 0.25em 0.6em;
   border-radius: 0.5rem;
   font-weight: 600;
-  color: #fff !important;
+  color: #fff;
   font-size: 0.85rem;
   text-transform: uppercase;
-  backdrop-filter: var(--frosted-blur) !important;
+  backdrop-filter: var(--frosted-blur);
 }
 
-.badge.admin {
-  background-color: var(--admin-color) !important;
-}
-
-.badge.mod {
-  background-color: var(--mod-color) !important;
-}
-
-.badge.user {
-  background-color: var(--user-color) !important;
-}
+.badge.admin { background-color: var(--admin-color); }
+.badge.mod   { background-color: var(--mod-color); }
+.badge.user  { background-color: var(--user-color); }
 
 /* ==========================
    Inputs
 =========================== */
 input, textarea, select {
-  background: var(--surface-color) !important;
-  backdrop-filter: var(--frosted-blur) !important;
-  border: 1px solid var(--border-color) !important;
-  color: var(--text-color) !important;
+  background: var(--surface-color);
+  backdrop-filter: var(--frosted-blur);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
   padding: 0.5em;
   border-radius: 0.5rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
@@ -154,8 +107,8 @@ input, textarea, select {
 
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: var(--pink-accent) !important;
-  box-shadow: 0 0 0 3px oklch(75% 0.15 320 / 0.25) !important;
+  border-color: var(--pink-accent);
+  box-shadow: 0 0 0 3px oklch(75% 0.15 320 / 0.25);
 }
 
 /* ==========================
@@ -165,43 +118,43 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 1rem;
-  background: var(--surface-color) !important;
-  backdrop-filter: var(--frosted-blur) !important;
+  background: var(--surface-color);
+  backdrop-filter: var(--frosted-blur);
   border-radius: 0.75rem;
   overflow: hidden;
 }
 
 th, td {
-  border: 1px solid var(--border-color) !important;
+  border: 1px solid var(--border-color);
   padding: 0.5em 1em;
   transition: background 0.2s ease;
 }
 
 th {
-  background: oklch(100% 0 0 / 0.25) !important;
+  background: oklch(100% 0 0 / 0.25);
   text-align: left;
 }
 
 /* ==========================
    Misc Utilities
 =========================== */
-.bg-pink {
-  background-color: var(--pink-accent) !important;
-  color: var(--bg-color) !important;
-}
-
-.rounded {
-  border-radius: 1rem !important;
-}
-
-.shadow {
-  box-shadow: var(--shadow-light) !important;
-}
+.text-muted { color: var(--text-muted); }
+.text-pink { color: var(--pink-accent); }
+.bg-pink { background-color: var(--pink-accent); color: var(--bg-color); }
+.rounded { border-radius: 1rem; }
+.shadow { box-shadow: var(--shadow-light); }
 
 /* ==========================
    Hover Effects
 =========================== */
 .card:hover, .surface:hover {
-  border-color: var(--pink-accent) !important;
-  box-shadow: var(--shadow-hover) !important;
+  border-color: var(--pink-accent);
+  box-shadow: var(--shadow-hover);
+}
+
+button:hover, .btn:hover {
+  background-color: var(--button-hover);
+  color: var(--bg-color);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
 }
