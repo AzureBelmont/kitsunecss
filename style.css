@@ -32,17 +32,10 @@
 }
 
 /* ==========================
-   Background Fix (Theme Override)
+   Background Fix (safe)
 =========================== */
 body, html, #root, .wrapper, .main, .content {
   background-color: var(--bg-color) !important;
-  color: var(--text-color) !important;
-  transition: background-color 0.3s ease, color 0.3s ease !important;
-}
-
-body * {
-  background-color: inherit !important;
-  color: inherit !important;
 }
 
 /* ==========================
