@@ -7,7 +7,7 @@
     --color-red: oklch(0.482 0.055 19.3);
     --color-light-red: oklch(0.564 0.066 19.3);
     --color-green: oklch(0.614 0.064 326.3);
-    --color-light-green: oklch(0.582 0.096 326.7);
+    --color-light-green: oklch(0.582 0.096 326.7); /* light pink */
     --color-yellow: oklch(0.524 0.040 66.8);
     --color-light-yellow: oklch(0.615 0.048 66.7);
     --color-magenta: oklch(0.497 0.080 326.7);
