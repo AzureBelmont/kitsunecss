@@ -131,23 +131,30 @@ a:hover {
 }
 
 /* ==========================================================
-   KITSUNE LOGO REPLACEMENT (HEADER)
+   KITSUNE LOGO REPLACEMENT (UNIT3D / AITHER)
    ========================================================== */
 
-/* Hide the default Aither SVG logo */
-.top-nav__logo img,
-.top-nav__logo svg {
+/* Hide default logo (SVG or IMG) */
+.top-nav__brand svg,
+.top-nav__brand img,
+.top-nav__logo svg,
+.top-nav__logo img {
     opacity: 0 !important;
 }
 
-/* Replace with Kitsune fox */
+/* Prepare container */
+.top-nav__brand,
 .top-nav__logo {
     position: relative;
     width: 40px;
     height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Inject custom logo */
+/* Inject Kitsune fox */
+.top-nav__brand::after,
 .top-nav__logo::after {
     content: "";
     position: absolute;
@@ -158,6 +165,8 @@ a:hover {
     background-position: center;
     background-size: contain;
 
+    pointer-events: none;
+
     /* Pink glow */
     filter:
         drop-shadow(0 0 6px rgba(244,170,202,0.5))
@@ -166,10 +175,10 @@ a:hover {
     transition: filter 0.25s ease;
 }
 
-/* Stronger glow on hover */
+/* Hover glow */
+.top-nav__brand:hover::after,
 .top-nav__logo:hover::after {
     filter:
         drop-shadow(0 0 8px rgba(244,170,202,0.75))
         drop-shadow(0 0 20px rgba(244,170,202,0.5));
 }
-
