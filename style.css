@@ -145,6 +145,21 @@ a:hover {
     padding: 0 !important;
 }
 
+/* ==========================================================
+   FORCE-HIDE TEXT LOGO (AITHER fallback)
+   ========================================================== */
+
+.top-nav__site-logo {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+
 
 /* ==========================================================
    KITSUNE LOGO REPLACEMENT (UNIT3D / AITHER)
