@@ -131,6 +131,22 @@ a:hover {
 }
 
 /* ==========================================================
+   FORCE-HIDE AITHER FAVICON LOGO IMG
+   ========================================================== */
+
+/* Hide the inline favicon logo image */
+.top-nav img[src*="favicon"],
+.top-nav__brand img[src*="favicon"],
+.top-nav__logo img[src*="favicon"] {
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* ==========================================================
    KITSUNE LOGO REPLACEMENT (UNIT3D / AITHER)
    ========================================================== */
 
